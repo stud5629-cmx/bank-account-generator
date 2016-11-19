@@ -1,5 +1,9 @@
 package ru.sidvi.account_tools.model;
 
+import ru.sidvi.account_tools.Util;
+import ru.sidvi.account_tools.refs.AccountType;
+import ru.sidvi.account_tools.refs.Currency;
+
 /**
  * @author Vitaly Sidorov mail@vitaly-sidorov.com
  */
@@ -58,6 +62,19 @@ public class Account {
         StringBuilder buf = new StringBuilder(value);
         buf.setCharAt(8, key);
         return buf.toString();
+    }
+
+    public static Account create(AccountType type, Currency currency) {
+        return new Account(type.toString() + currency.toString() + "0" + Util.generateDigits(12));
+    }
+
+    public void updateKey(String key) {
+        value = value.substring(0, 8) + key + value.substring(9);
+    }
+
+    @Override
+    public String toString() {
+        return value;
     }
 }
 

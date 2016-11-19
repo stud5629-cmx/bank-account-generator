@@ -2,6 +2,8 @@ package ru.sidvi.account_tools.generator;
 
 import ru.sidvi.account_tools.model.Account;
 import ru.sidvi.account_tools.model.Bic;
+import ru.sidvi.account_tools.refs.AccountType;
+import ru.sidvi.account_tools.refs.Currency;
 
 /**
  * @author Vitaly Sidorov mail@vitaly-sidorov.com
