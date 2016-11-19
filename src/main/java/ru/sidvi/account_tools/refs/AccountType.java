@@ -18,13 +18,13 @@ public enum AccountType {
         this.value = value;
     }
 
-    public String toString() {
+    public String getValue() {
         return value;
     }
 
     public static AccountType fromString(String value) {
         for (AccountType type : AccountType.values()) {
-            if (type.toString().equals(value)) {
+            if (type.getValue().equals(value)) {
                 return type;
             }
         }

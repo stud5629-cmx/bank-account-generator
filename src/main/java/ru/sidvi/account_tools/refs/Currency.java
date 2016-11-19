@@ -15,14 +15,13 @@ public enum Currency {
         this.value = value;
     }
 
-    @Override
-    public String toString() {
+    public String getValue() {
         return value;
     }
 
     public static Currency fromString(String value) {
         for (Currency type : Currency.values()) {
-            if (type.toString().equals(value)) {
+            if (type.getValue().equals(value)) {
                 return type;
             }
         }

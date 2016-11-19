@@ -51,25 +51,25 @@ public class Account {
     }
 
     public String getWitoutKey() {
-        return repaceKey('0');
+        return replaceKey('0');
     }
 
     public void changeKey(String key) {
-        value = repaceKey(key.charAt(0));
+        value = replaceKey(key.charAt(0));
     }
 
-    private String repaceKey(char key) {
+    private String replaceKey(char key) {
         StringBuilder buf = new StringBuilder(value);
         buf.setCharAt(8, key);
         return buf.toString();
     }
 
     public static Account create(AccountType type, Currency currency) {
-        return new Account(type.toString() + currency.toString() + "0" + Util.generateDigits(12));
+        return new Account(type.getValue() + currency.getValue() + "0" + Util.generateDigits(12));
     }
 
     public void updateKey(String key) {
-        value = value.substring(0, 8) + key + value.substring(9);
+        value = replaceKey(key.charAt(0));
     }
 
     @Override
