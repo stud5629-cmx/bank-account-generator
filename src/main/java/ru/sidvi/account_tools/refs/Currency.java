@@ -19,4 +19,13 @@ public enum Currency {
     public String toString() {
         return value;
     }
+
+    public static Currency fromString(String value) {
+        for (Currency type : Currency.values()) {
+            if (type.toString().equals(value)) {
+                return type;
+            }
+        }
+        return null;
+    }
 }

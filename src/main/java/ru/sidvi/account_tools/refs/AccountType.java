@@ -21,4 +21,13 @@ public enum AccountType {
     public String toString() {
         return value;
     }
+
+    public static AccountType fromString(String value) {
+        for (AccountType type : AccountType.values()) {
+            if (type.toString().equals(value)) {
+                return type;
+            }
+        }
+        return null;
+    }
 }
